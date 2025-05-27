@@ -9,7 +9,6 @@ export default function Home() {
   const callApi = (version: "v1" | "v2") => {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", `/api/${version}/json`);
-    xhr.setRequestHeader("traceparent", "test-traceparent-value");
     xhr.onload = function () {
       if (xhr.status === 200) {
         const json = JSON.parse(xhr.responseText);
